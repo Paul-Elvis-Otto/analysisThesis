@@ -1,0 +1,18 @@
+[project]
+name = "analysisthesis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arviz[preview]>=0.23.4",
+    "jupyter>=1.1.1",
+    "krippendorff>=0.8.2",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.1",
+    "pingouin>=0.6.0",
+    "polars>=1.38.1",
+    "pyarrow>=23.0.1",
+    "pymc>=5",
+    "seaborn>=0.13.2",
+]
