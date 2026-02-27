@@ -1,0 +1,21 @@
+\begin{tabular}{lrrr}
+\toprule
+                  & \multicolumn{1}{c}{view\_count} & \multicolumn{1}{c}{comment\_count} & \multicolumn{1}{c}{like\_count} \\ 
+\cmidrule(lr){2-2} \cmidrule(lr){3-3} \cmidrule(lr){4-4} 
+                  &                             (1) &                                (2) &                             (3) \\ 
+\midrule
+(Intercept)       &                      -39659.630 &                             84.006 &                        2000.818 \\ 
+                  &                     (28494.636) &                          (103.458) &                      (1386.527) \\ 
+word\_count       &                         312.197 &                              0.299 &                         -27.733 \\ 
+                  &                       (394.275) &                            (0.472) &                        (18.757) \\ 
+duration\_seconds &                        -885.009 &                                    &                          89.937 \\ 
+                  &                      (1461.791) &                                    &                        (69.820) \\ 
+like\_count       &                       19.243*** &                              0.033 &                                 \\ 
+                  &                         (1.293) &                            (0.020) &                                 \\ 
+view\_count       &                                 &                             -0.001 &                        0.046*** \\ 
+                  &                                 &                            (0.001) &                         (0.003) \\ 
+\midrule
+$N$               &                              34 &                                 34 &                              34 \\ 
+$R^2$             &                           0.892 &                              0.110 &                           0.897 \\ 
+\bottomrule
+\end{tabular}

@@ -6,6 +6,9 @@
 # macOS Finder tags
 *.swp
 ._*
+renv/
+data/
+
 
 # Python bytecode
 __pycache__/

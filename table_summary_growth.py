@@ -131,14 +131,17 @@ fig1 = pypst.Figure(
     caption=f'"Concentration of views (analysis period: {first_year}–{last_year})"',
 )
 with open("tables/growth_concentration.typ", mode="wt") as f:
-    f.write(fig1.render())
+    content = fig1.render().rstrip()
+    f.write(content + " <tbl-growth_concentration>\n")
 
 fig2 = pypst.Figure(table2, caption='"Channel growth statistics"')
 with open("tables/growth_statistics.typ", mode="wt") as f:
-    f.write(fig2.render())
+    content = fig2.render().rstrip()
+    f.write(content + " <tbl-growth_statistics>\n")
 
 fig3 = pypst.Figure(table3, caption='"Growth by channel size (quartiles)"')
 with open("tables/growth_quartile.typ", mode="wt") as f:
-    f.write(fig3.render())
+    content = fig3.render().rstrip()
+    f.write(content + " <tbl-growth_quartile>\n")
 
 print("Tables saved to tables/")
