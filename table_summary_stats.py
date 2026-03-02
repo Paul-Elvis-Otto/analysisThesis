@@ -2,14 +2,24 @@ import pandas as pd
 import pypst
 
 df = pd.read_parquet("data/out/videos.parquet")
-
 raw_cols = ["view_count", "like_count", "comment_count"]
 
 summary = df[raw_cols].describe().T
 summary.reset_index(inplace=True)
 summary.rename(columns={"index": "variable"}, inplace=True)
 
-# print(summary)
+sci_cols = ["mean", "std", "min", "25%", "50%", "75%", "max"]
+
+
+def format_value(x):
+    if abs(x) >= 1_000_000:
+        return f"{x:.2e}"
+    return f"{x:.2f}"
+
+
+summary[sci_cols] = summary[sci_cols].map(format_value)
+
+print(summary)
 
 
 table = pypst.Table.from_dataframe(summary, include_index=False)

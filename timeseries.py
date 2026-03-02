@@ -89,15 +89,14 @@ summary_df["Videos"] = summary_df["Videos"].map("{:,}".format)
 summary_df["Views"] = summary_df["Views"].map("{:,}".format)
 summary_df["Avg Views per Video"] = summary_df["Avg Views per Video"].map("{:,}".format)
 
-
-table = pypst.Table.from_dataframe(summary_df, include_index=False)
+table = pypst.Table.from_dataframe(summary_df, include_index=False)  # ty:ignore[possibly-missing-attribute]
 table.stroke = "none"
 # table.align = "(x, _) => if calc.odd(x) {left} else {right}"
 table.add_hline(1, stroke="1.5pt")
 table.add_hline(len(summary_df) + 1, stroke="1.5pt")
 
 figure = pypst.Figure(
-    table,
+    table,  # ty:ignore[invalid-argument-type]
     caption='"Videos, views, and average views per video by year"',
 )
 
